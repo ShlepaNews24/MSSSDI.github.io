@@ -1,0 +1,72 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: white;
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(255,255,255,0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 400px;
+}
+
+.game-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #667eea;
+}
+
+.game-container p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+input {
+  padding: 12px;
+  width: 70%;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#guess-btn {
+  background: #667eea;
+  color: white;
+}
+
+#restart-btn {
+  background: #f5576c;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#message {
+  font-size: 1.3rem;
+  margin: 20px 0;
+  font-weight: bold;
+  min-height: 30px;
+}

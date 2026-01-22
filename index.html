@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MSSSDI — Мини-игры</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: url('assets/images/MSSSDI.jpg') no-repeat center center fixed;
+      background-size: cover;
+      background-position: center;
+      overflow-x: hidden;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #1e66f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ✅ ШАПКА — БЕЗ ИЗМЕНЕНИЙ */
+    header {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-size: 3.5rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: #1e66f5;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      line-height: 1;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin: 8px 0 0;
+      color: #1e66f5;
+      opacity: 0.7;
+      font-weight: 300;
+    }
+
+    /* ✅ УГАДАЙ ЧИСЛО — ТЕПЕРЬ ЕЩЁ МЕНЬШЕ: 3.5rem */
+    .main-title {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      font-size: 3.5rem; /* ✅ УМЕНЬШИЛИ С 4rem ДО 3.5rem — ЕЩЁ НЕМНОГО МЕНЬШЕ */
+      font-weight: bold;
+      color: #1e66f5;
+      text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+      margin: 0;
+      line-height: 1;
+      letter-spacing: -2px;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .main-title:hover {
+      opacity: 0.9;
+    }
+
+    /* ✅ ФУТЕР — БЕЗ ИЗМЕНЕНИЙ */
+    footer {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      color: #1e66f5;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- ✅ ШАПКА — НЕ ИЗМЕНЕНА -->
+  <header>
+    <h1>✡︎ MSSSDI ⛧</h1>
+    <p>эти.... как их там....</p>
+  </header>
+
+  <!-- ✅ УГАДАЙ ЧИСЛО — ТЕПЕРЬ ЕЩЁ МЕНЬШЕ, ВСЁ ОСТАЛЬНОЕ БЕЗ ИЗМЕНЕНИЙ -->
+  <a href="games/guess-number.html" class="main-title">Угадай число</a>
+
+  <a href="games/flash.html" class="doom-link">Flash Игра</a>
+  
+  <footer>
+    <p>© 2026 MSSSDI</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
