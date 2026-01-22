@@ -58,12 +58,19 @@
       font-weight: 300;
     }
 
-    /* ✅ УГАДАЙ ЧИСЛО — ТЕПЕРЬ ЕЩЁ МЕНЬШЕ: 3.5rem */
-    .main-title {
+    /* ✅ КОНТЕЙНЕР ДЛЯ ДВУХ ИГР — РАЗМЕЩАЕМ ИХ РЯДОМ */
+    .games-container {
       position: absolute;
       top: 30%;
       left: 5%;
-      font-size: 3.5rem; /* ✅ УМЕНЬШИЛИ С 4rem ДО 3.5rem — ЕЩЁ НЕМНОГО МЕНЬШЕ */
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Расстояние между играми по вертикали */
+    }
+
+    /* ✅ СТИЛЬ ДЛЯ КАЖДОЙ ИГРЫ — ОДИНАКОВЫЙ */
+    .game-link {
+      font-size: 3.5rem;
       font-weight: bold;
       color: #1e66f5;
       text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
@@ -74,7 +81,7 @@
       transition: opacity 0.2s ease;
     }
 
-    .main-title:hover {
+    .game-link:hover {
       opacity: 0.9;
     }
 
@@ -91,17 +98,19 @@
   </style>
 </head>
 <body>
-  <!-- ✅ ШАПКА — НЕ ИЗМЕНЕНА -->
+  <!-- ✅ ШАПКА -->
   <header>
     <h1>✡︎ MSSSDI ⛧</h1>
     <p>эти.... как их там....</p>
   </header>
 
-  <!-- ✅ УГАДАЙ ЧИСЛО — ТЕПЕРЬ ЕЩЁ МЕНЬШЕ, ВСЁ ОСТАЛЬНОЕ БЕЗ ИЗМЕНЕНИЙ -->
-  <a href="games/guess-number.html" class="main-title">Угадай число</a>
+  <!-- ✅ ДВЕ ИГРЫ РЯДОМ — ВЕРТИКАЛЬНО ВЫСТРОЕННЫЕ, НО СТИЛЬ ОДИНАКОВЫЙ -->
+  <div class="games-container">
+    <a href="games/guess-number.html" class="game-link">Угадай число</a>
+    <a href="games/flash.html" class="game-link">Flash Игра</a>
+  </div>
 
-  <a href="games/flash.html" class="doom-link">Flash Игра</a>
-  
+  <!-- ✅ ФУТЕР -->
   <footer>
     <p>© 2026 MSSSDI</p>
   </footer>
