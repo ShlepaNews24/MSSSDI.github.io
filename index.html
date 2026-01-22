@@ -58,14 +58,15 @@
       font-weight: 300;
     }
 
-    /* ✅ КОНТЕЙНЕР ДЛЯ ДВУХ ИГР — РАЗМЕЩАЕМ ИХ РЯДОМ */
+    /* ✅ КОНТЕЙНЕР ДЛЯ ДВУХ ИГР — РАЗМЕЩАЕМ ИХ ГОРИЗОНТАЛЬНО, СПРАВА */
     .games-container {
       position: absolute;
       top: 30%;
-      left: 5%;
+      right: 5%; /* ✅ СПРАВА, с отступом от края */
       display: flex;
-      flex-direction: column;
-      gap: 10px; /* Расстояние между играми по вертикали */
+      flex-direction: row;
+      gap: 30px; /* Расстояние между играми */
+      align-items: flex-start;
     }
 
     /* ✅ СТИЛЬ ДЛЯ КАЖДОЙ ИГРЫ — ОДИНАКОВЫЙ */
@@ -79,6 +80,7 @@
       letter-spacing: -2px;
       text-decoration: none;
       transition: opacity 0.2s ease;
+      white-space: nowrap; /* Не переносить текст */
     }
 
     .game-link:hover {
@@ -104,7 +106,7 @@
     <p>эти.... как их там....</p>
   </header>
 
-  <!-- ✅ ДВЕ ИГРЫ РЯДОМ — ВЕРТИКАЛЬНО ВЫСТРОЕННЫЕ, НО СТИЛЬ ОДИНАКОВЫЙ -->
+  <!-- ✅ ДВЕ ИГРЫ РЯДОМ — ГОРИЗОНТАЛЬНО, СПРАВА -->
   <div class="games-container">
     <a href="games/guess-number.html" class="game-link">Угадай число</a>
     <a href="games/flash.html" class="game-link">Flash Игра</a>
