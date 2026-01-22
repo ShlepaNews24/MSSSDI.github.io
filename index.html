@@ -35,7 +35,7 @@
       to { opacity: 1; }
     }
 
-    /* ✅ ШАПКА — БЕЗ ИЗМЕНЕНИЙ */
+    /* ✅ ШАПКА — ЦЕНТР, ВЕРХ */
     header {
       position: absolute;
       top: 50px;
@@ -48,6 +48,7 @@
       color: #1e66f5;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
       line-height: 1;
+      text-align: center;
     }
 
     header p {
@@ -56,20 +57,20 @@
       color: #1e66f5;
       opacity: 0.7;
       font-weight: 300;
+      text-align: center;
     }
 
-    /* ✅ КОНТЕЙНЕР ДЛЯ ДВУХ ИГР — РАЗМЕЩАЕМ ИХ ГОРИЗОНТАЛЬНО, СПРАВА */
+    /* ✅ ИГРЫ — ЛЕВЫЙ КРАЙ, В ОДНОЙ СТРОКЕ, ПОД ШАПКОЙ */
     .games-container {
       position: absolute;
-      top: 30%;
-      right: 5%; /* ✅ СПРАВА, с отступом от края */
+      top: 40%; /* ✅ ПОД ШАПКОЙ — ПОДБИРАЕМ, ЧТОБЫ БЫЛО КРАСИВО */
+      left: 5%; /* ✅ ЛЕВЫЙ ОТСТУП — НЕ ЦЕНТР, НЕ ПРАВО — ЛЕВО */
       display: flex;
       flex-direction: row;
-      gap: 30px; /* Расстояние между играми */
+      gap: 30px;
       align-items: flex-start;
     }
 
-    /* ✅ СТИЛЬ ДЛЯ КАЖДОЙ ИГРЫ — ОДИНАКОВЫЙ */
     .game-link {
       font-size: 3.5rem;
       font-weight: bold;
@@ -80,17 +81,19 @@
       letter-spacing: -2px;
       text-decoration: none;
       transition: opacity 0.2s ease;
-      white-space: nowrap; /* Не переносить текст */
+      white-space: nowrap;
     }
 
     .game-link:hover {
       opacity: 0.9;
     }
 
-    /* ✅ ФУТЕР — БЕЗ ИЗМЕНЕНИЙ */
+    /* ✅ ФУТЕР — ЦЕНТР, ВНИЗ */
     footer {
       position: absolute;
       bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
       color: #1e66f5;
       font-size: 0.9rem;
@@ -100,19 +103,19 @@
   </style>
 </head>
 <body>
-  <!-- ✅ ШАПКА -->
+  <!-- ✅ ШАПКА — ЦЕНТР -->
   <header>
     <h1>✡︎ MSSSDI ⛧</h1>
     <p>эти.... как их там....</p>
   </header>
 
-  <!-- ✅ ДВЕ ИГРЫ РЯДОМ — ГОРИЗОНТАЛЬНО, СПРАВА -->
+  <!-- ✅ ИГРЫ — ЛЕВО, В ОДНОЙ СТРОКЕ -->
   <div class="games-container">
     <a href="games/guess-number.html" class="game-link">Угадай число</a>
     <a href="games/flash.html" class="game-link">Flash Игра</a>
   </div>
 
-  <!-- ✅ ФУТЕР -->
+  <!-- ✅ ФУТЕР — ЦЕНТР -->
   <footer>
     <p>© 2026 MSSSDI</p>
   </footer>
