@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earth Taken — Выбор игры</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: url('../assets/images/MSSSDI.jpg') no-repeat center center fixed;
+      background-size: cover;
+      background-position: center;
+      overflow-x: hidden;
+      color: #1e66f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* ✅ ЗАГОЛОВОК МЕНЮ — ЦЕНТР */
+    .menu-header {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: #1e66f5;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      letter-spacing: 1px;
+    }
+
+    /* ✅ СПИСОК ИГР — ЛЕВО, ВЕРТИКАЛЬНО */
+    .game-list {
+      position: absolute;
+      top: 35%;
+      left: 5%;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: flex-start;
+    }
+
+    .game-item {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #1e66f5;
+      text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+      margin: 0;
+      line-height: 1;
+      letter-spacing: -2px;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+      padding: 5px 15px;
+      border: 2px solid #1e66f5;
+      border-radius: 4px;
+    }
+
+    .game-item:hover {
+      opacity: 0.9;
+      border-color: #0d47a1;
+    }
+
+    /* ✅ НАЗАД — ВНИЗУ — ИСПРАВЛЕНО! */
+    .back-link {
+      position: absolute;
+      bottom: 30px;
+      left: 5%;
+      font-size: 1.8rem;
+      color: #1e66f5;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* ✅ ФУТЕР — ЦЕНТР */
+    footer {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      color: #1e66f5;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- ✅ ЗАГОЛОВОК МЕНЮ -->
+  <h1 class="menu-header">Earth Taken</h1>
+
+  <!-- ✅ СПИСОК ИГР -->
+  <div class="game-list">
+    <a href="earth-taken-1.html" class="game-item">Earth Taken 1</a>
+    <a href="earth-taken-2.html" class="game-item">Earth Taken 2</a>
+    <a href="earth-taken-3.html" class="game-item">Earth Taken 3</a>
+  </div>
+
+  <!-- ✅ КНОПКА НАЗАД — ИСПРАВЛЕНА! -->
+  <a href="/index.html" class="back-link">← Назад</a>
+
+  <!-- ✅ ФУТЕР -->
+  <footer>
+    <p>© 2026 MSSSDI</p>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
