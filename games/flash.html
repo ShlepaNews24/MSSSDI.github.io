@@ -25,13 +25,12 @@
       align-items: center;
     }
 
-    /* ✅ ✅ ✅ ТОЛЬКО ЭТИ ДВЕ СТРОКИ ТЫ МЕНЯЕШЬ — ЭТО И ЕСТЬ “ИГРОВОЕ ОКНО” */
+    /* ✅ ТЫ УПРАВЛЯЕШЬ РАЗМЕРОМ ТУТ — ЭТО И ЕСТЬ ТВОЁ ИГРОВОЕ ОКНО */
     :root {
-      --game-width: 1920px;
-      --game-height: 1080px;
+      --game-width: 1197px;
+      --game-height: 893px;
     }
 
-    /* ✅ КОНТЕЙНЕР — ПОДСТАВЛЯЕТ РАЗМЕР ИГРЫ */
     #ruffle-container {
       width: var(--game-width);
       height: var(--game-height);
@@ -43,7 +42,7 @@
       overflow: hidden;
     }
 
-    /* ✅ ИГРА — ВСЕГДА ЗАПОЛНЯЕТ КОНТЕЙНЕР */
+    /* ✅ Игра должна заполнять контейнер — без растяжения */
     #ruffle-container canvas {
       width: 100% !important;
       height: 100% !important;
@@ -51,7 +50,6 @@
       image-rendering: crisp-edges !important;
     }
 
-    /* ✅ ЗАГРУЗКА — ЦЕНТР */
     #loading {
       position: absolute;
       top: 50%;
@@ -64,7 +62,6 @@
       z-index: 10;
     }
 
-    /* ✅ УПРАВЛЕНИЕ — ВНИЗУ */
     #controls {
       position: absolute;
       bottom: 30px;
@@ -91,8 +88,15 @@
       const container = document.getElementById("ruffle-container");
       container.appendChild(player);
 
-      // ✅ ЗАГРУЖАЕМ ТВОЙ .SWF ФАЙЛ
-      player.load("EarthTaken1.swf");
+      // ✅ ✅ ✅ КЛЮЧЕВОЙ ШАГ — ПРИНУДИТЕЛЬНО ЗАДАЁМ РАЗМЕР ИГРЫ — ИГНОРИРУЕМ SWF
+      player.load("EarthTaken1.swf", {
+        config: {
+          width: 1280,   // ✅ ТВОЙ ЖЕЛАЕМЫЙ РАЗМЕР — В ПИКСЕЛЯХ
+          height: 720,   // ✅ ТВОЙ ЖЕЛАЕМЫЙ РАЗМЕР — В ПИКСЕЛЯХ
+          // Дополнительно: можно отключить автозапуск, если нужно
+          // autoplay: false,
+        }
+      });
 
       document.getElementById("loading").style.display = "none";
     });
