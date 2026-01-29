@@ -20,8 +20,6 @@
       position: relative;
       overflow-x: hidden;
     }
-
-    /* ✅ ЦЕНТРАЛЬНЫЙ ЛОГОТИП */
     .menu-logo {
       position: absolute;
       top: 50px;
@@ -33,13 +31,10 @@
       filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
       animation: float 4s ease-in-out infinite;
     }
-
     @keyframes float {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(-15px); }
     }
-
-    /* ✅ КНОПКИ ИГР — ЦЕНТРИРОВАННЫЕ, В СТИЛЕ КОСМИЧЕСКОГО ИНТЕРФЕЙСА */
     .game-menu {
       position: absolute;
       top: 40%;
@@ -51,7 +46,6 @@
       align-items: center;
       z-index: 10;
     }
-
     .game-item {
       font-size: 3rem;
       font-weight: bold;
@@ -68,14 +62,11 @@
       white-space: nowrap;
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
     }
-
     .game-item:hover {
       background: rgba(0, 60, 80, 0.6);
       transform: scale(1.05);
       box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
     }
-
-    /* ✅ КНОПКА НАЗАД — ВНИЗУ СЛЕВА */
     .back-link {
       position: absolute;
       bottom: 30px;
@@ -90,26 +81,20 @@
       box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
       transition: all 0.3s ease;
     }
-
     .back-link:hover {
       background: rgba(0, 60, 80, 0.6);
       box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
     }
-
-    /* ✅ АНИМАЦИЯ ЗВЁЗД (фоновая) */
     .star {
       position: absolute;
       background: white;
       border-radius: 50%;
       animation: twinkle 3s infinite;
     }
-
     @keyframes twinkle {
       0%, 100% { opacity: 0.2; }
       50% { opacity: 1; }
     }
-
-    /* ✅ ФУТЕР */
     footer {
       position: absolute;
       bottom: 10px;
@@ -120,8 +105,6 @@
       opacity: 0.7;
       text-align: center;
     }
-
-    /* ✅ АДАПТИВНОСТЬ */
     @media (max-width: 768px) {
       .menu-logo {
         width: 80%;
@@ -139,18 +122,12 @@
   </style>
 </head>
 <body>
-  <!-- ✅ ЛОГОТИП -->
-  <img src="../assets/images/Zombotron_logo.png" alt="Zombotron  Logo" class="menu-logo" />
-
-  <!-- ✅ МЕНЮ ИГР -->
+  <img src="../assets/images/Zombotron_logo.png" alt="Zombotron Logo" class="menu-logo" />
   <div class="game-menu">
-    <a href="Zombotron-1.html"game-item">ZOMBOTRON 1</a>
+    <a href="zombotron-1.html" class="game-item">ZOMBOTRON 1</a>
   </div>
-
-  <!-- ✅ КНОПКА НАЗАД -->
   <a href="../index.html" class="back-link">← Назад</a>
 
-  <!-- ✅ АНИМАЦИЯ ЗВЁЗД (динамически создаём) -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const body = document.body;
