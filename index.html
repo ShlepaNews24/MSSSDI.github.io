@@ -60,18 +60,54 @@
       text-align: center;
     }
 
-    /* ✅ КОНТЕЙНЕР ДЛЯ ДВУХ ИГР — ГОРИЗОНТАЛЬНО, НИЖНИЙ КРАЙ ТЕКСТА ВЫРОВНЕН */
+    /* ✅ КОНТЕЙНЕР ДЛЯ ТРЁХ ИГР — ГОРИЗОНТАЛЬНО, ВЫРОВНЕНЫ ПО НИЖНЕМУ КРАЮ ТЕКСТА */
     .games-container {
       position: absolute;
       top: 40%;
-      left: 5%;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       flex-direction: row;
-      gap: 30px;
-      align-items: flex-end; /* ✅ КЛЮЧЕВОЕ: выравниваем по НИЖНЕМУ краю текста */
+      gap: 40px;
+      align-items: flex-end; /* ✅ КЛЮЧЕВОЕ: все элементы выравниваются по нижнему краю текста */
+      justify-content: center;
     }
 
-    /* ✅ УГАДАЙ ЧИСЛО — ТОЛЬКО ТЕКСТ */
+    /* ✅ УГАДАЙ ЧИСЛО — ТОЛЬКО ТЕКСТ (как и остальные) */
+    .game-link,
+    .game-link-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #1e66f5;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      min-height: 160px; /* ✅ ФИКСИРОВАННАЯ ВЫСОТА — ВСЕ ОДИНАКОВЫ */
+      justify-content: flex-end; /* ✅ ТЕКСТ ВНИЗУ */
+      padding-bottom: 10px;
+    }
+
+    .game-link:hover,
+    .game-link-container:hover {
+      opacity: 0.9;
+      transform: translateY(-5px);
+    }
+
+    /* ✅ ИКОНКИ — ОДИНАКОВЫЙ РАЗМЕР */
+    .game-icon {
+      width: 120px;
+      height: auto;
+      margin-bottom: 10px;
+      filter: brightness(1.1);
+      transition: filter 0.3s ease;
+    }
+
+    .game-link-container:hover .game-icon {
+      filter: brightness(1.3);
+    }
+
+    /* ✅ ТЕКСТ — ОДИНАКОВЫЙ ШРИФТ, РАЗМЕР, ОТСТУПЫ */
+    .game-label,
     .game-link {
       font-size: 3.5rem;
       font-weight: bold;
@@ -80,45 +116,21 @@
       margin: 0;
       line-height: 1;
       letter-spacing: -2px;
-      text-decoration: none;
-      transition: opacity 0.2s ease;
       white-space: nowrap;
+      font-family: 'Segoe UI Black', 'Segoe UI', sans-serif;
     }
 
-    .game-link:hover {
-      opacity: 0.9;
-    }
-
-    /* ✅ EARTH TAKEN — КАРТИНКА СВЕРХУ, ТЕКСТ СНИЗУ */
-    .game-link-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #1e66f5;
-      transition: opacity 0.2s ease;
-    }
-
-    .game-link-container:hover {
-      opacity: 0.9;
-    }
-
-    .game-icon {
-      width: 120px;
-      height: auto;
-      margin-bottom: 10px; /* Отступ между картинкой и текстом */
-      filter: brightness(1.1);
-    }
-
-    .game-label {
+    /* ✅ ZOMBOTRON — ТАКОЙ ЖЕ, КАК EARTH TAKEN */
+    .game-link-container h3 {
+      margin: 0;
       font-size: 3.5rem;
       font-weight: bold;
       color: #1e66f5;
       text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-      margin: 0;
       line-height: 1;
       letter-spacing: -2px;
       white-space: nowrap;
+      font-family: 'Segoe UI Black', 'Segoe UI', sans-serif;
     }
 
     /* ✅ ФУТЕР — ЦЕНТР, ВНИЗ */
@@ -142,12 +154,21 @@
     <p>эти.... как их там....</p>
   </header>
 
-  <!-- ✅ ИГРЫ — ЛЕВО, В ОДНОЙ СТРОКЕ, НИЖНИЙ КРАЙ ТЕКСТА — ОДИНАКОВЫЙ -->
+  <!-- ✅ ИГРЫ — ЦЕНТР, В ОДНОЙ СТРОКЕ, ВЫРОВНЕНЫ ПО НИЖНЕМУ КРАЮ ТЕКСТА -->
   <div class="games-container">
+    <!-- УГАДАЙ ЧИСЛО -->
     <a href="games/guess-number.html" class="game-link">Угадай число</a>
+
+    <!-- EARTH TAKEN -->
     <a href="games/earth-taken-menu.html" class="game-link-container">
       <img src="assets/images/EarthTaken.png" alt="Earth Taken" class="game-icon" />
       <span class="game-label">Earth Taken</span>
+    </a>
+
+    <!-- ZOMBOTRON — ТАКОЙ ЖЕ, КАК EARTH TAKEN -->
+    <a href="games/Zombotron-menu.html" class="game-link-container">
+      <img src="assets/images/Z-Head.png" alt="Zombotron" class="game-icon" />
+      <h3>Zombotron</h3>
     </a>
   </div>
 
@@ -156,6 +177,5 @@
     <p>© 2026 MSSSDI</p>
   </footer>
 
-  <!-- ✅ script.js — не используется, удалён из подключения -->
 </body>
 </html>

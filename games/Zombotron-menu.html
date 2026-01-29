@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zombotron</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: url('../assets/images/Zombotron_menu.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0f7ff;
+      font-family: 'Courier New', monospace;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ✅ ЦЕНТРАЛЬНЫЙ ЛОГОТИП */
+    .menu-logo {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      max-width: 500px;
+      height: auto;
+      filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-15px); }
+    }
+
+    /* ✅ КНОПКИ ИГР — ЦЕНТРИРОВАННЫЕ, В СТИЛЕ КОСМИЧЕСКОГО ИНТЕРФЕЙСА */
+    .game-menu {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .game-item {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #e0f7ff;
+      text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+      padding: 15px 40px;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      background: rgba(0, 30, 40, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    .game-item:hover {
+      background: rgba(0, 60, 80, 0.6);
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+
+    /* ✅ КНОПКА НАЗАД — ВНИЗУ СЛЕВА */
+    .back-link {
+      position: absolute;
+      bottom: 30px;
+      left: 5%;
+      font-size: 1.8rem;
+      color: #e0f7ff;
+      text-decoration: none;
+      padding: 8px 20px;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      background: rgba(0, 30, 40, 0.4);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(0, 60, 80, 0.6);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    /* ✅ АНИМАЦИЯ ЗВЁЗД (фоновая) */
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* ✅ ФУТЕР */
+    footer {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #e0f7ff;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      text-align: center;
+    }
+
+    /* ✅ АДАПТИВНОСТЬ */
+    @media (max-width: 768px) {
+      .menu-logo {
+        width: 80%;
+        top: 30px;
+      }
+      .game-item {
+        font-size: 2rem;
+        padding: 10px 25px;
+      }
+      .back-link {
+        font-size: 1.5rem;
+        left: 10%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ✅ ЛОГОТИП -->
+  <img src="../assets/images/Zombotron_logo.png" alt="Zombotron  Logo" class="menu-logo" />
+
+  <!-- ✅ МЕНЮ ИГР -->
+  <div class="game-menu">
+    <a href="Zombotron-1.html"game-item">ZOMBOTRON 1</a>
+  </div>
+
+  <!-- ✅ КНОПКА НАЗАД -->
+  <a href="../index.html" class="back-link">← Назад</a>
+
+  <!-- ✅ АНИМАЦИЯ ЗВЁЗД (динамически создаём) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const body = document.body;
+      for (let i = 0; i < 100; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.width = `${Math.random() * 3 + 1}px`;
+        star.style.height = star.style.width;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 3}s`;
+        body.appendChild(star);
+      }
+    });
+  </script>
+</body>
+</html>
