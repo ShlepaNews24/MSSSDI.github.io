@@ -9,7 +9,6 @@
     html {
       height: 100%;
     }
-
     body {
       margin: 0;
       padding: 0;
@@ -28,8 +27,8 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       padding: 40px 20px;
+      position: relative; /* 🔴 КЛЮЧЕВОЕ: для абсолютного позиционирования дочерних элементов */
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -50,7 +49,6 @@
       line-height: 1;
       text-align: center;
     }
-
     header p {
       font-size: 1.1rem;
       margin: 8px 0 0;
@@ -73,7 +71,7 @@
       justify-content: center;
     }
 
-    /* ✅ УГАДАЙ ЧИСЛО — ТОЛЬКО ТЕКСТ (как и остальные) */
+    /* ✅ УГАДАЙ ЧИСЛО — ТОЛЬКО ТЕКСТ */
     .game-link,
     .game-link-container {
       display: flex;
@@ -132,6 +130,32 @@
       opacity: 0.8;
       text-align: center;
     }
+
+    /* ✅ GIF В ПРАВОМ ВЕРХНЕМ УГЛУ — НОВЫЙ КОД */
+    .top-right-gif {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+     width: 80px;
+     height: auto;
+     pointer-events: none;
+     opacity: 0.8;
+     transition: opacity 0.3s ease;
+    }
+
+    .top-right-gif:hover {
+      opacity: 1;
+    }
+
+    .gif-animation {
+    width: 100%;
+    height: auto;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    display: block;
+    }
   </style>
 </head>
 <body>
@@ -141,11 +165,15 @@
     <p>эти.... как их там....</p>
   </header>
 
+  <!-- ✅ GIF-АНИМАЦИЯ В ПРАВОМ ВЕРХНЕМ УГЛУ -->
+  <div class="top-right-gif">
+    <img src="assets/images/nugget.gif" alt="Decorative Animation" class="gif-animation" />
+  </div>
+
   <!-- ✅ ИГРЫ — ЦЕНТР, В ОДНОЙ СТРОКЕ, ВЫРОВНЕНЫ ПО НИЖНЕМУ КРАЮ ТЕКСТА -->
   <div class="games-container">
     <!-- УГАДАЙ ЧИСЛО -->
     <a href="games/guess-number.html" class="game-link">Угадай число</a>
-
     <!-- EARTH TAKEN -->
     <a href="games/earth-taken-menu.html" class="game-link-container">
       <img src="assets/images/EarthTaken.png" alt="Earth Taken" class="game-icon" />
@@ -157,6 +185,5 @@
   <footer>
     <p>© 2026 MSSSDI</p>
   </footer>
-
 </body>
 </html>
